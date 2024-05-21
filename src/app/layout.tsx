@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
-
+import Gnb from '@/components/layouts/Gnb';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
@@ -16,7 +16,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
-      <body className="sm:w-full md:w-[500px] m-auto h-full">{children}</body>
+      <body className="h-full w-full">
+        <main className="sm:w-full md:w-[500px] m-auto h-full min-h-full flex flex-col relative bg-white">
+          <Gnb />
+          {children}
+        </main>
+      </body>
     </html>
   );
 }
